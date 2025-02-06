@@ -48,9 +48,8 @@ public class DeliveryCardTest {
         $$(".checkbox__box").find(Condition.visible).click();
         $$("button").find(Condition.exactText("Забронировать")).click();
         $(withText("Встреча успешно забронирована"))
-                .shouldBe(Condition.visible, Duration.ofSeconds(15));
-        $(withText("Встреча успешно забронирована"))
-                .shouldBe(Condition.text(date));
+                .shouldBe(Condition.visible, Duration.ofSeconds(15))
+                .shouldHave(Condition.text(date));
     }
 
     @Test
@@ -68,7 +67,8 @@ public class DeliveryCardTest {
         $(withText("Встреча успешно забронирована"))
                 .shouldBe(Condition.visible, Duration.ofSeconds(15));
         $(withText("Встреча успешно забронирована"))
-                .shouldBe(Condition.text(date));
+                .shouldBe(Condition.text(date))
+                .shouldHave(Condition.text(date));
     }
 
     @Test
@@ -102,7 +102,8 @@ public class DeliveryCardTest {
         $(withText("Встреча успешно забронирована"))
                 .shouldBe(Condition.visible, Duration.ofSeconds(15));
         $(withText("Встреча успешно забронирована"))
-                .shouldBe(Condition.text(date));
+                .shouldBe(Condition.text(date))
+                .shouldHave(Condition.text(date));
     }
 
     @Test
